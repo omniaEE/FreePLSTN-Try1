@@ -99,8 +99,11 @@
 
 
 
-
 @media screen and (max-width: 800px) {
+  .navbar {
+    padding: 2px 0;
+  }
+  
 
       
  .topbar .to-hide {
@@ -109,8 +112,13 @@
   }
 
   .topbar .to-show {
+    height: 5vh;
     display:flex;
     justify-content: end;
+  }
+  .topbar .to-show svg {
+    width: 36px;
+    height: 36px;
   }
   .navbar ul:last-child {
     display: flex;
@@ -120,8 +128,11 @@
   .navbar ul:last-child li {
     margin-right: 10px;
   } 
-  .navbar ul:last-child li svg {
-    width: 24px;
-    height: 24px;
-  }
+  .navbar ul:last-child li a {
+    display: block;
+    align-self: center;
+    width: 36px;
+    height: 36px;
+  } 
+
 }
