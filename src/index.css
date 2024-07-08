@@ -120,7 +120,7 @@ button[type="submit"]:hover {
   gap: 1rem;
 }
 .Questions__container {
-  width: 90%;
+  width: 100%;
 }
 
 .login-container h2,
@@ -194,7 +194,7 @@ code {
 
 @media screen and (max-width: 600px) {
   .Grade {
-    width: 300px;
+    width: 200px;
   }
   .navbar ul {
     flex-direction: column;
@@ -206,7 +206,7 @@ code {
   }
 
   .navbar {
-    width: 4rem;
+    /* width: 3rem; */
     height: 100%;
   }
 
@@ -214,24 +214,32 @@ code {
   .register-container,
   .create-exam-container,
   .upload-exam-container,
-  .grade-exams-container,
-  .view-results-container,
+  /* .grade-exams-container, */
+  /* .view-results-container, */
   .profile-container,
   .settings-container,
   .Error-container,
   .Questions__container,
   .Resultes__container,
-  .Resultes {
-    max-width: 400px;
+  .Resultes 
+  {
+    width: 100vh;
     flex-wrap: wrap;
-    margin-left: 4.3rem;
+    /* margin-left: 4.3rem; */
     align-content: center;
   }
-  .container {
-    margin-left: 4.3rem;
-    width: 70%;
+  .exam-container{
+    margin: 0;
   }
+
+
   .images {
     width: 12rem;
   }
+  /* I added this part  */
+  /* .view-results-container,
+  .grade-exams-container
+  {
+    margin-left: 4.3rem;
+  } */
 }

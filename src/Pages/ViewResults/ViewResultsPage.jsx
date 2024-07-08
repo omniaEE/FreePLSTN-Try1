@@ -113,53 +113,56 @@ const ViewResultsPage = () => {
           onChange={(e) => setFinalResultFilter(e.target.value)}
         />
       </div>
-      <div className="sorting-buttons">
-        <button onClick={sortFinalResultAscending}>
+      <div className="buttons-wrapper">
+        <button className="sorting-button" onClick={sortFinalResultAscending}>
           Sort Final Result: Low to High
         </button>
-        <button onClick={sortFinalResultDescending}>
+        <button className="sorting-button" onClick={sortFinalResultDescending}>
           Sort Final Result: High to Low
         </button>
-        <button onClick={sortStudentIdAscending}>
+        <button className="sorting-button" onClick={sortStudentIdAscending}>
           Sort Student ID: Low to High
         </button>
-        <button onClick={sortStudentIdDescending}>
+        <button className="sorting-button" onClick={sortStudentIdDescending}>
           Sort Student ID: High to Low
         </button>
       </div>
       <h2>MoExam</h2>
-      <table {...getTableProps()} className="results-table">
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
-                      : ""}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+      <div className="table-wrapper">
+
+        <table {...getTableProps()} className="results-table">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                    {column.render("Header")}
+                    <span>
+                      {column.isSorted
+                        ? column.isSortedDesc
+                          ? " 🔽"
+                          : " 🔼"
+                        : ""}
+                    </span>
+                  </th>
                 ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <button type="button" onClick={() => handleExport("pdf")}>
         Export as PDF
       </button>

@@ -2,7 +2,7 @@
   background-color: var(--color-primary);
   color: #fff;
   padding: 5px 0;
-  position: fixed;
+  position: sticky; 
   width: 100%;
   top: 0;
   margin-bottom: 2rem;
@@ -28,23 +28,24 @@
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: space-around;
+  gap: 0.2rem;
   flex-wrap: wrap;
 }
 
 .navbar ul li {
-  margin: 0 10px;
+  margin: 10px;
   width: fit-content;
 }
 
-.navbar ul li a {
+.navbar ul li a  {
+  /* display: block; */
   color: #fff;
   text-decoration: none;
   padding: 10px;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a:not(.active):hover {
   background-color: #0b70b3;
   border-radius: 4px;
   transform: translateY(-2px);
@@ -63,18 +64,64 @@
   border-radius: 4px;
   transform: translateY(-2px);
 }
-@media screen and (max-width: 600px) {
-  .navbar ul {
-    flex-direction: column;
-    justify-content: space-around;
-    height: 90%;
-  }
-  .navbar ul li {
-    font-size: small;
+/* what (I) added */
+.sidebar {
+  display: none;
+  position: fixed;
+  top:0;
+  left: 0;
+  margin: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(14, 169, 241, .7);
+  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+}
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+  
+}
+.topbar .to-show {
+  display: none; 
+
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+      
+ .topbar .to-hide {
+    display: none; 
+
   }
 
-  .navbar {
-    width: 4rem;
-    height: 100%;
+  .topbar .to-show {
+    display:flex;
+    justify-content: end;
+  }
+  .navbar ul:last-child {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2px;
+  }
+  .navbar ul:last-child li {
+    margin-right: 10px;
+  } 
+  .navbar ul:last-child li svg {
+    width: 24px;
+    height: 24px;
   }
 }

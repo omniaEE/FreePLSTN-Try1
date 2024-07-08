@@ -1,3 +1,5 @@
+
+
 .questions-section button,
 .grade-exams-container button,
 .view-results-container button {
@@ -45,11 +47,20 @@
   border: 1px solid #007bff;
   border-radius: 10px;
 }
-.Grade {
-  max-width: 700px;
-}
+/* .Grade {
+  max-width: 100%;
+} */
 @media screen and (max-width: 600px) {
-  .Grade {
-    width: 300px;
+
+  .Questions__container {
+    margin: 0;
+
   }
+  .grading-tools {
+    width:100%;
+   
+  }
+  /* .form-group {
+    width: 100%;
+  } */
 }
